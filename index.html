@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,400;9..144,0,500;9..144,0,600;9..144,0,700;9..144,1,400;9..144,1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230F1115'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='22' font-weight='600' font-style='italic' fill='%23D88B47' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <style>
 :root {
   --amber: #D88B47;
@@ -69,7 +70,7 @@ a { color: var(--amber-deep); text-decoration: none; transition: color 0.2s; }
 .cta-ghost:hover { border-color: var(--amber); color: var(--amber); }
 
 /* Reel placeholder */
-.hero-reel { position: relative; aspect-ratio: 16/10; border-radius: 12px; overflow: hidden; border: 1px solid rgba(216,139,71,0.25); background: linear-gradient(135deg, rgba(216,139,71,0.18) 0%, rgba(15,17,21,0.95) 100%); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 18px; padding: 32px; box-shadow: 0 30px 80px -20px rgba(216,139,71,0.18); }
+.hero-reel { position: relative; aspect-ratio: 9/14; max-height: 620px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(216,139,71,0.25); background: var(--charcoal); box-shadow: 0 30px 80px -20px rgba(216,139,71,0.22); }
 .reel-play { width: 78px; height: 78px; border-radius: 50%; background: var(--amber); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 8px rgba(216,139,71,0.18); transition: transform 0.3s; cursor: pointer; }
 .hero-reel:hover .reel-play { transform: scale(1.05); }
 .reel-play::after { content: ''; width: 0; height: 0; border-left: 18px solid var(--charcoal); border-top: 12px solid transparent; border-bottom: 12px solid transparent; margin-left: 5px; }
@@ -108,12 +109,13 @@ a { color: var(--amber-deep); text-decoration: none; transition: color 0.2s; }
 .work-tile:hover { transform: translateY(-4px); }
 .work-tile::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, transparent 40%, rgba(15,17,21,0.92) 100%); }
 .work-tile-bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
-.work-tile-1 { background: linear-gradient(135deg, #1A1D24 0%, #0F1115 100%), radial-gradient(circle at 30% 30%, rgba(216,139,71,0.25), transparent 60%); }
-.work-tile-2 { background: linear-gradient(135deg, #2A1F18 0%, #0F1115 100%); }
-.work-tile-3 { background: linear-gradient(135deg, #1F2A20 0%, #0F1115 100%); }
-.work-tile-4 { background: linear-gradient(135deg, #2A1818 0%, #0F1115 100%); }
-.work-tile-5 { background: linear-gradient(135deg, #18202A 0%, #0F1115 100%); }
-.work-tile-6 { background: linear-gradient(135deg, #2A2418 0%, #0F1115 100%); }
+.work-tile-1 { background: radial-gradient(circle at 30% 25%, rgba(216,139,71,0.28), transparent 55%), linear-gradient(160deg, #2A1810 0%, #0F1115 65%, #050608 100%); }
+.work-tile-2 { background: radial-gradient(circle at 70% 80%, rgba(189,94,52,0.22), transparent 55%), linear-gradient(135deg, #1F1814 0%, #100A07 100%); }
+.work-tile-3 { background: radial-gradient(circle at 50% 30%, rgba(76,107,87,0.20), transparent 55%), linear-gradient(135deg, #14201A 0%, #08100C 100%); }
+.work-tile-4 { background: radial-gradient(circle at 25% 75%, rgba(143,77,57,0.22), transparent 55%), linear-gradient(135deg, #2A1A14 0%, #14080B 100%); }
+.work-tile-5 { background: radial-gradient(circle at 80% 25%, rgba(89,128,154,0.22), transparent 55%), linear-gradient(135deg, #161E2A 0%, #07090F 100%); }
+.work-tile-6 { background: radial-gradient(circle at 40% 70%, rgba(193,148,84,0.22), transparent 55%), linear-gradient(135deg, #261D11 0%, #0F0A07 100%); }
+.work-tile::after { content: ''; position: absolute; inset: 0; z-index: 1; background-image: repeating-linear-gradient(0deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 3px); pointer-events: none; mix-blend-mode: overlay; }
 .work-tile-content { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; justify-content: space-between; padding: 28px; color: #FFF; }
 .work-tile-tag { display: inline-block; align-self: flex-start; padding: 6px 14px; background: rgba(216,139,71,0.18); border: 1px solid rgba(216,139,71,0.4); border-radius: 100px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); font-weight: 600; }
 .work-tile-info h4 { font-family: var(--serif); font-size: 22px; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 6px; color: #FFF; }
@@ -136,8 +138,8 @@ a { color: var(--amber-deep); text-decoration: none; transition: color 0.2s; }
 .industry-card li::before { content: ''; position: absolute; left: 0; top: 14px; width: 12px; height: 1px; background: var(--amber-deep); }
 
 /* Services */
-.services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 16px; }
-@media (max-width: 720px) { .services-grid { grid-template-columns: 1fr; } }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 16px; }
+@media (max-width: 980px) { .services-grid { grid-template-columns: 1fr; } }
 .service-card { padding: 36px 36px 32px; background: rgba(255,255,255,0.04); border: 1px solid rgba(216,139,71,0.18); border-radius: 8px; transition: all 0.3s; }
 .service-card:hover { border-color: var(--amber); background: rgba(216,139,71,0.06); }
 .service-card .badge { display: inline-block; padding: 5px 12px; border-radius: 100px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; margin-bottom: 18px; }
@@ -250,9 +252,7 @@ footer a:hover { color: var(--amber); }
         </div>
       </div>
       <div class="hero-reel">
-        <div class="reel-play"></div>
-        <div class="reel-label">2026 Sizzle Reel</div>
-        <div class="reel-tag">Sarasota's local operators, on screen</div>
+        <iframe src="https://www.instagram.com/ahowardproductions/embed/" frameborder="0" scrolling="no" allowtransparency="true" style="width:100%;height:100%;border-radius:12px;background:transparent;" loading="lazy"></iframe>
       </div>
     </div>
   </div>
@@ -266,12 +266,12 @@ footer a:hover { color: var(--amber); }
         <div class="stat-label">Instagram followers</div>
       </div>
       <div class="stat">
-        <div class="stat-num">250+</div>
-        <div class="stat-label">Productions shipped</div>
+        <div class="stat-num">YT &middot; TT</div>
+        <div class="stat-label">Cross-platform reach</div>
       </div>
       <div class="stat">
-        <div class="stat-num">5.0&#9733;</div>
-        <div class="stat-label">Average client rating</div>
+        <div class="stat-num">Sarasota</div>
+        <div class="stat-label">Lakewood Ranch &middot; FL</div>
       </div>
       <div class="stat">
         <div class="stat-num">FL</div>
@@ -285,7 +285,7 @@ footer a:hover { color: var(--amber); }
   <div class="container">
     <span class="section-eyebrow">01 &middot; Recent work</span>
     <h2 class="section-title">Recent productions for <em>Sarasota's operators</em>.</h2>
-    <p class="section-sub">A working portfolio of brand films, monthly content drops, and social retainer work across law, medicine, real estate, and the trades. Click any tile to watch.</p>
+    <p class="section-sub">A working portfolio of brand films, monthly content drops, and social retainer work across law, medicine, real estate, and the trades. Mockup tiles below indicate vertical and project type. Live reels embedded on build &middot; <a href="https://www.instagram.com/ahowardproductions/" target="_blank" rel="noopener" style="color:var(--amber-deep);font-weight:500;">view current work on Instagram &rarr;</a></p>
 
     <div class="work-grid">
       <a href="#contact" class="work-tile">
@@ -465,20 +465,6 @@ footer a:hover { color: var(--amber); }
         <a href="#contact" class="service-cta">Book a Discovery Call &rarr;</a>
       </div>
 
-      <div class="service-card">
-        <span class="badge recurring">04 &middot; Production support</span>
-        <h4>Day-of <em>production</em></h4>
-        <div class="price-hint">Per-shoot &middot; varies by scope</div>
-        <p class="pitch">Single-shoot production days for events, conferences, brand campaigns, podcast launches, or one-off video needs. Cinema-grade gear, two-camera by default, full edit included.</p>
-        <ul>
-          <li>Pre-shoot brief and shot list</li>
-          <li>Two-camera setup with audio capture</li>
-          <li>Same-day rough cut, full edit within 7 days</li>
-          <li>Color and sound included</li>
-          <li>Distribution-ready files in every format you need</li>
-        </ul>
-        <a href="#contact" class="service-cta">Book a Discovery Call &rarr;</a>
-      </div>
     </div>
   </div>
 </section>
@@ -543,17 +529,16 @@ footer a:hover { color: var(--amber); }
       <div class="about-bio">
         <p>Based in Lakewood Ranch. Working out of Sarasota, Tampa Bay, and Florida-wide on request. <strong>I built the @ahowardproductions Instagram from zero to 46,000 followers</strong> on the back of cinematic local content, talking-head storytelling, and a deep belief that Sarasota's professionals deserve marketing that matches the quality of their work.</p>
         <p>Most local videographers ship a polished one-time wedding reel and disappear. <strong>I run content engines for the operators who need to show up every week, every month, every year.</strong> Law firms, medical practices, real estate operators, custom builders. The professionals whose practices grow when they show up consistently on the platforms their next client is already scrolling.</p>
-        <p>The work is cinematic. The output is consistent. The deliverable is the inbound your practice needs. I keep my client roster intentionally small so every project gets the time it deserves.</p>
+        <p>The work is cinematic. The output is consistent. The deliverable is the inbound your practice needs. I keep the client roster intentionally small so every project gets the time it deserves.</p>
       </div>
       <div class="about-card">
-        <h5>Operator stats</h5>
+        <h5>At a glance</h5>
         <ul>
-          <li><span>Founded</span><span>2019</span></li>
           <li><span>Based</span><span>Lakewood Ranch, FL</span></li>
           <li><span>Service area</span><span>Florida-wide</span></li>
           <li><span>Instagram</span><span>46K followers</span></li>
-          <li><span>Productions shipped</span><span>250+</span></li>
-          <li><span>Average rating</span><span>5.0&#9733;</span></li>
+          <li><span>YouTube</span><span>@aaronhowardproductions</span></li>
+          <li><span>TikTok</span><span>@ahowardproductions</span></li>
           <li><span>Chamber member</span><span>Greater Sarasota</span></li>
           <li><span>Available</span><span>Limited 2026 slots</span></li>
         </ul>
@@ -565,25 +550,13 @@ footer a:hover { color: var(--amber); }
 <section class="section dark">
   <div class="container">
     <span class="section-eyebrow">06 &middot; Client words</span>
-    <h2 class="section-title">What <em>operators</em> say after the work ships.</h2>
-    <p class="section-sub">Sample quotes from law firm, medical practice, and real estate clients. Full named references available on the call.</p>
+    <h2 class="section-title">References from <em>local operators</em>.</h2>
+    <p class="section-sub">Named law firm, medical practice, and real estate references shared on the discovery call. Mockup placeholder below indicates where actual client quotes drop in on build.</p>
 
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="testimonial-mark">&ldquo;</div>
-        <div class="testimonial-quote">Aaron showed up, ran the room, and delivered a brand film that closed the next three consults we ran. Best videography hire we have made.</div>
-        <div class="testimonial-attr"><strong>Personal Injury Attorney</strong> &middot; Sarasota, FL</div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-mark">&ldquo;</div>
-        <div class="testimonial-quote">Twelve videos a month. Every one is on-brand and on-time. Our Instagram has tripled in the months since we started the retainer.</div>
-        <div class="testimonial-attr"><strong>Aesthetic Dermatology Practice</strong> &middot; Lakewood Ranch, FL</div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-mark">&ldquo;</div>
-        <div class="testimonial-quote">The waterfront listing reel Aaron shot got me five qualified inquiries inside a week. The home went under contract above ask. He gets it.</div>
-        <div class="testimonial-attr"><strong>Luxury Real Estate Broker</strong> &middot; Sarasota, FL</div>
-      </div>
+    <div style="border: 1px dashed rgba(216,139,71,0.3); border-radius: 8px; padding: 48px 32px; text-align: center; background: rgba(216,139,71,0.04);">
+      <div style="font-family: var(--serif); font-size: 13px; font-style: italic; color: var(--amber); letter-spacing: 0.04em; margin-bottom: 14px; font-weight: 600;">Demo placeholder</div>
+      <p style="font-family: var(--serif); font-size: 22px; font-weight: 500; line-height: 1.4; color: rgba(255,255,255,0.85); max-width: 720px; margin: 0 auto 18px;">Three to five named client testimonials drop in here on build. Specific results, specific verticals, specific Sarasota and Lakewood Ranch operators.</p>
+      <p style="font-size: 14px; color: rgba(255,255,255,0.5); max-width: 600px; margin: 0 auto;">Pulled from Aaron's existing client base across law, medical, real estate, and trades. Verified before publication.</p>
     </div>
   </div>
 </section>

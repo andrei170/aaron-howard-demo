@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,400;9..144,0,600;9..144,0,700;9..144,1,400;9..144,1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230F1115'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='22' font-weight='600' font-style='italic' fill='%23D88B47' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <style>
 :root {
   --amber: #D88B47;
@@ -152,11 +153,26 @@ a { color: var(--amber-deep); text-decoration: none; }
 footer { padding: 36px 0; border-top: 1px solid var(--line); text-align: center; font-size: 13px; color: var(--ink-quiet); background: var(--cream); }
 footer a { color: var(--amber-deep); }
 
+/* SERP mock */
+.serp-mock { background: #FFF; border: 1px solid var(--line); border-radius: 8px; padding: 28px 32px; max-width: 760px; margin: 0 auto; box-shadow: 0 12px 40px rgba(15,17,21,0.06); }
+.serp-mock-bar { display: flex; align-items: center; gap: 14px; padding-bottom: 22px; border-bottom: 1px solid var(--line); margin-bottom: 22px; }
+.serp-mock-bar .g-mark { font-family: var(--serif); font-size: 24px; font-weight: 600; letter-spacing: -0.02em; color: var(--charcoal); }
+.serp-mock-bar .g-query { flex: 1; padding: 8px 14px; background: var(--cream); border-radius: 100px; border: 1px solid var(--line); font-size: 14px; color: var(--ink-soft); font-family: var(--sans); }
+.serp-mock-bar .g-query::before { content: '\1F50D'; margin-right: 8px; opacity: 0.5; }
+.serp-result { padding: 14px 0; border-bottom: 1px dashed var(--line-soft); }
+.serp-result:last-child { border-bottom: none; }
+.serp-result .crumb { font-size: 12px; color: var(--ink-quiet); margin-bottom: 4px; font-family: var(--sans); }
+.serp-result .title { font-family: var(--sans); font-size: 17px; font-weight: 500; color: #1A0DAB; margin-bottom: 4px; }
+.serp-result .snippet { font-size: 13px; color: var(--ink-soft); line-height: 1.5; font-family: var(--sans); }
+.serp-result.you { background: rgba(216,139,71,0.08); border: 1px dashed var(--amber); border-radius: 6px; padding: 16px 18px; margin: 10px 0; text-align: center; font-style: italic; color: var(--amber-deep); font-size: 14px; font-family: var(--sans); }
+.serp-caption { font-size: 13px; color: var(--ink-quiet); text-align: center; margin-top: 18px; font-style: italic; }
+
 @media (max-width: 1024px) {
   .compare-grid, .audience-grid, .bombshell-grid, .plan-grid { grid-template-columns: 1fr; gap: 32px; }
   .scorecard-header, .scorecard-row { padding: 14px 20px; }
   .math-card { padding: 28px 24px; }
   .audience-num { font-size: 32px; min-width: 80px; }
+  .serp-mock { padding: 22px 20px; }
 }
 </style>
 </head>
@@ -229,7 +245,7 @@ footer a { color: var(--amber-deep); }
             <li>AEO long-form structured for ChatGPT / Perplexity / Gemini citation pickup on local-pro-relevant queries</li>
             <li>Google Business Profile rebuild plus citation campaign across Florida trade directories</li>
             <li>Email capture and Calendly funnel that turns the 46K Instagram audience into bookable inbound</li>
-            <li>Performance benchmark: top 10 Google for "Sarasota videographer" by day 60, or work continues at no additional cost</li>
+            <li>Target: top 10 Google for "Sarasota videographer" inside 60 days, with the same install playbook that's run for two operator partnerships generating $1M+</li>
           </ul>
           <a href="../" class="compare-cta cta-new">Open the Mockup &rarr;</a>
         </div>
@@ -249,9 +265,52 @@ footer a { color: var(--amber-deep); }
         <h2>The most recognizable videographer in your market is <em>invisible</em> the moment Google opens.</h2>
         <p>A Sarasota personal injury attorney just typed "best videographer for my law firm Sarasota" into Google. The results that came back: <strong>Sarasota Court Reporters. Premier Video Productions in Bradenton. Captivation Agency. Action Video Productions. A handful of Thumbtack listings.</strong></p>
         <p>You did not appear. Not in the organic results. Not in the local pack. Not in Google's AI Overview. Not in a ChatGPT recommendation. Not in Perplexity. The audience you have built on Instagram does not save you here, because each of those platforms owns the channel and Google does not crawl it as authority signal.</p>
-        <p>That attorney is going to call one of those four companies this week. <strong>$25,000 LTV per case</strong> is walking into someone else's pipeline because your front door does not exist.</p>
+        <p>That attorney is going to call one of those four companies this week. Across the verticals you serve, <strong>client LTV ranges from $6K (general dentistry) to $25K (personal injury attorney) to $20K+ (premium med spa)</strong>. One missed inbound a month from search alone is six figures of pipeline walking into someone else's hands by year end.</p>
         <p style="font-size: 14px; color: rgba(255,255,255,0.55); font-style: italic;">This is the kind of gap that does not show up in Instagram analytics. You see the IG growth, the views, the saves. You do not see the Sarasota lawyer who searched, did not find you, hired Captivation, and never thought of you again.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center;margin-left:auto;margin-right:auto;">What Google <em>actually shows</em> a Sarasota attorney<br>typing your category right now.</h2>
+    <p class="section-sub" style="text-align:center;margin-left:auto;margin-right:auto;">Live as of this audit. Top organic results for "best videographer Sarasota Florida law firm." The companies actually winning the inbound your audience size suggests should be yours.</p>
+
+    <div class="serp-mock">
+      <div class="serp-mock-bar">
+        <span class="g-mark">G</span>
+        <span class="g-query">best videographer sarasota florida law firm</span>
+      </div>
+      <div class="serp-result">
+        <div class="crumb">sarasotacourtreporters.com &rsaquo; legal-videography</div>
+        <div class="title">Best Legal Videography Services | Sarasota Court Reporters</div>
+        <div class="snippet">Locally owned, full-service court reporting and legal videography for attorneys, law firms, and businesses in Sarasota and Southwest Florida...</div>
+      </div>
+      <div class="serp-result">
+        <div class="crumb">pv-legal.com &rsaquo; about-us</div>
+        <div class="title">Premier Video Productions | Tampa, FL Legal Video</div>
+        <div class="snippet">Founded in Bradenton, Florida. CLVS-certified legal videographers serving the Florida legal community for over 30 years...</div>
+      </div>
+      <div class="serp-result">
+        <div class="crumb">captivation.agency &rsaquo; lawyers</div>
+        <div class="title">For Lawyers and Law Offices &middot; Captivation Agency</div>
+        <div class="snippet">Comprehensive video production for lawyers. Sarasota-based studio. Pre-production, production, distribution...</div>
+      </div>
+      <div class="serp-result">
+        <div class="crumb">actionlegalvideo.com</div>
+        <div class="title">Florida Legal Videography Services | Action Legal Video</div>
+        <div class="snippet">Florida legal video production company with certified legal videographer experts for trial presentations, depositions, evidence filming...</div>
+      </div>
+      <div class="serp-result">
+        <div class="crumb">thumbtack.com &rsaquo; fl &rsaquo; sarasota &rsaquo; videographers</div>
+        <div class="title">The 10 Best Videographers in Sarasota, FL (with Free Estimates)</div>
+        <div class="snippet">Free quotes from 10 local Sarasota videographers. Compare ratings, reviews, and prices...</div>
+      </div>
+      <div class="serp-result you">
+        ahowardproductions: not in the top 10. Not in the top 100. The 46K-follower Sarasota videographer Google has not been told exists.
+      </div>
+      <p class="serp-caption">Verified via Google search. Same picture across "Sarasota videographer," "Lakewood Ranch video production," "video production for medical practice Sarasota," and every commercial-intent variant audited.</p>
     </div>
   </div>
 </section>
@@ -420,7 +479,7 @@ footer a { color: var(--amber-deep); }
 
 <footer>
   <div class="container">
-    AG1 Consulting Ltd &middot; Andrei Givero &middot; <a href="mailto:info@andreicopy.net">info@andreicopy.net</a> &middot; <a href="https://andrei170.github.io/ag1/">andrei170.github.io/ag1</a>
+    AG1 Consulting Ltd &middot; Andrei Givero &middot; <a href="mailto:info@andreicopy.net">info@andreicopy.net</a> &middot; <a href="https://andrei170.github.io/ag1/">AG1 Consulting</a> &middot; <a href="https://andrei170.github.io/ag1-services/">AG1 Services</a>
   </div>
 </footer>
 
