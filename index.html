@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aaron Howard &middot; The Site That Should Exist &middot; AG1 Consulting</title>
+<meta name="description" content="46,000 followers built. The website that should be converting them does not exist. A peer audit of A Howard Productions and what we would build in less than 7 days.">
+<meta property="og:title" content="Aaron Howard &middot; The site that should exist">
+<meta property="og:description" content="46K followers. Zero search share. Here is the structural fix in less than 7 days.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,400;9..144,0,600;9..144,0,700;9..144,1,400;9..144,1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --amber: #D88B47;
+  --amber-deep: #B96E2E;
+  --amber-soft: rgba(216, 139, 71, 0.08);
+  --charcoal: #0F1115;
+  --ink: #1C1F26;
+  --ink-soft: #4D5663;
+  --ink-quiet: #7E8693;
+  --line: #E8E5DD;
+  --line-soft: #F1EEE6;
+  --bg: #FAF8F2;
+  --cream: #F5F1E8;
+  --cream-deep: #EDE7D8;
+  --red: #B5402F;
+  --green: #2E8557;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Inter', system-ui, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+a { color: var(--amber-deep); text-decoration: none; }
+.container { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+
+/* Top bar */
+.topbar { background: var(--charcoal); color: rgba(255,255,255,0.9); padding: 12px 0; font-size: 13px; }
+.topbar-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.topbar-tag { color: var(--amber); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px; }
+
+/* Hero */
+.hero { padding: 110px 0 90px; background: var(--cream); position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: 5%; right: -10%; width: 700px; height: 700px; background: radial-gradient(circle, rgba(216,139,71,0.10), transparent 65%); filter: blur(60px); pointer-events: none; }
+.hero-grid { display: grid; grid-template-columns: 1fr; gap: 32px; position: relative; z-index: 2; max-width: 1000px; margin: 0 auto; }
+.eyebrow { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--amber-deep); font-weight: 700; margin-bottom: 26px; display: block; }
+.hero h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(44px, 6.6vw, 92px); line-height: 1; letter-spacing: -0.025em; margin-bottom: 32px; color: var(--charcoal); }
+.hero h1 em { font-style: italic; color: var(--amber-deep); }
+.hero p { color: var(--ink-soft); font-size: 19px; max-width: 740px; line-height: 1.55; }
+
+.section { padding: 90px 0; position: relative; }
+.section.alt { background: var(--cream); }
+.section-title { font-family: var(--serif); font-weight: 600; font-size: clamp(32px, 4vw, 56px); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 16px; color: var(--charcoal); }
+.section-title em { font-style: italic; color: var(--amber-deep); }
+.section-sub { color: var(--ink-soft); font-size: 17px; margin-bottom: 56px; max-width: 760px; line-height: 1.65; }
+
+/* Compare cards */
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.compare-card { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #FFF; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; }
+.compare-card:hover { border-color: var(--amber); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(216, 139, 71, 0.14); }
+.compare-label { padding: 16px 24px; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; }
+.compare-label.current { background: rgba(181, 64, 47, 0.08); color: var(--red); border-bottom: 1px solid rgba(181, 64, 47, 0.18); }
+.compare-label.new { background: rgba(216, 139, 71, 0.10); color: var(--amber-deep); border-bottom: 1px solid rgba(216, 139, 71, 0.22); }
+.compare-preview { aspect-ratio: 16/10; position: relative; overflow: hidden; }
+.compare-preview-fallback { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 16px; padding: 32px; text-align: center; }
+.compare-preview-fallback h3 { font-family: var(--serif); font-size: 32px; font-weight: 600; letter-spacing: -0.01em; color: #FFF; }
+.compare-preview-current { background: linear-gradient(135deg, rgba(15,17,21,0.55), rgba(15,17,21,0.92)), linear-gradient(180deg, #1A1D24 0%, #0F1115 100%); }
+.compare-preview-new { background: linear-gradient(135deg, rgba(216,139,71,0.6), rgba(15,17,21,0.92)), linear-gradient(135deg, #D88B47 0%, #0F1115 100%); }
+.compare-body { padding: 28px 32px; }
+.compare-body h4 { font-family: var(--serif); font-size: 24px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.01em; color: var(--charcoal); }
+.compare-body p { color: var(--ink-soft); font-size: 14px; margin-bottom: 20px; }
+.compare-body ul { list-style: none; margin-bottom: 24px; }
+.compare-body li { padding: 7px 0; font-size: 14px; color: var(--ink-soft); display: flex; align-items: flex-start; gap: 10px; line-height: 1.55; }
+.compare-body li::before { font-size: 12px; margin-top: 2px; flex-shrink: 0; font-weight: 700; }
+.current li::before { content: '\2717'; color: var(--red); }
+.new li::before { content: '\2713'; color: var(--green); }
+.compare-cta { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.25s; }
+.cta-current { border: 1px solid rgba(181, 64, 47, 0.4); color: var(--red); }
+.cta-current:hover { background: rgba(181, 64, 47, 0.06); }
+.cta-new { background: var(--amber-deep); color: #FFF; }
+.cta-new:hover { background: var(--charcoal); }
+
+/* Bombshell */
+.bombshell-section { background: var(--charcoal); color: #FFF; }
+.bombshell-section .section-title { color: #FFF; }
+.bombshell-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: center; }
+.bombshell-stat { font-family: var(--serif); font-size: clamp(96px, 14vw, 200px); font-weight: 600; line-height: 0.95; color: var(--amber); letter-spacing: -0.04em; }
+.bombshell-stat-label { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 18px; line-height: 1.5; }
+.bombshell-content h2 { font-family: var(--serif); font-size: clamp(32px, 4vw, 54px); font-weight: 600; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 24px; color: #FFF; }
+.bombshell-content h2 em { font-style: italic; color: var(--amber); }
+.bombshell-content p { color: rgba(255,255,255,0.78); font-size: 17px; line-height: 1.7; margin-bottom: 18px; }
+.bombshell-content p strong { color: #FFF; font-weight: 600; }
+
+/* Audience section */
+.audience-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; margin-top: 40px; }
+.audience-stack { display: flex; flex-direction: column; gap: 20px; }
+.audience-card { padding: 26px 28px; background: #FFF; border: 1px solid var(--line); border-radius: 6px; display: flex; align-items: baseline; gap: 24px; }
+.audience-card.highlight { background: var(--cream-deep); border-color: var(--amber); }
+.audience-num { font-family: var(--serif); font-size: 38px; font-weight: 600; line-height: 1; letter-spacing: -0.025em; color: var(--charcoal); flex-shrink: 0; min-width: 100px; }
+.audience-card.highlight .audience-num { color: var(--amber-deep); }
+.audience-detail .platform { font-weight: 700; color: var(--charcoal); margin-bottom: 4px; font-size: 15px; }
+.audience-detail .desc { color: var(--ink-soft); font-size: 13px; line-height: 1.5; }
+.audience-callout { padding: 32px 32px 36px; background: var(--charcoal); color: #FFF; border-radius: 8px; }
+.audience-callout h4 { font-family: var(--serif); font-size: 26px; font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 14px; }
+.audience-callout p { color: rgba(255,255,255,0.8); font-size: 15px; line-height: 1.65; margin-bottom: 14px; }
+.audience-callout p:last-child { margin-bottom: 0; }
+.audience-callout strong { color: var(--amber); font-weight: 600; }
+
+/* Plan grid */
+.plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+.plan-card { padding: 36px 32px; background: #FFF; border: 1px solid var(--line); border-radius: 6px; transition: all 0.3s; position: relative; }
+.plan-card:hover { border-color: var(--amber); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(216, 139, 71, 0.08); }
+.plan-num { font-family: var(--serif); font-size: 13px; font-style: italic; color: var(--amber-deep); font-weight: 600; margin-bottom: 16px; display: block; letter-spacing: 0.05em; }
+.plan-card h4 { font-family: var(--serif); font-size: 26px; font-weight: 600; line-height: 1.15; margin-bottom: 12px; letter-spacing: -0.01em; color: var(--charcoal); }
+.plan-card p { color: var(--ink-soft); font-size: 14px; line-height: 1.65; }
+.plan-week { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber-deep); font-weight: 700; margin-top: 16px; display: inline-block; }
+
+/* Scorecard */
+.scorecard { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #FFF; }
+.scorecard-header { display: grid; grid-template-columns: 2fr 1fr 1fr; padding: 22px 32px; background: var(--cream-deep); border-bottom: 1px solid var(--line); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; color: var(--ink-soft); }
+.scorecard-row { display: grid; grid-template-columns: 2fr 1fr 1fr; padding: 18px 32px; border-bottom: 1px solid var(--line); align-items: center; }
+.scorecard-row:last-child { border-bottom: none; }
+.scorecard-row:hover { background: var(--cream); }
+.scorecard-label { font-size: 15px; color: var(--charcoal); }
+.scorecard-cell { font-size: 14px; }
+.scorecard-cell.current { color: var(--red); }
+.scorecard-cell.new { color: var(--green); font-weight: 600; }
+
+/* Math */
+.math-card { background: #FFF; border: 1px solid var(--line); border-radius: 8px; padding: 40px 44px; margin-top: 40px; }
+.math-card h4 { font-family: var(--serif); font-size: 24px; font-weight: 600; margin-bottom: 24px; letter-spacing: -0.01em; }
+.math-row { display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 14px 0; border-bottom: 1px solid var(--line-soft); align-items: baseline; }
+.math-row:last-child { border-bottom: none; padding-top: 22px; margin-top: 8px; border-top: 2px solid var(--charcoal); font-weight: 700; }
+.math-row .label { color: var(--ink-soft); font-size: 15px; line-height: 1.4; }
+.math-row .value { font-family: var(--serif); font-size: 22px; color: var(--charcoal); font-weight: 600; }
+.math-row.total .label { color: var(--charcoal); font-weight: 600; font-size: 16px; }
+.math-row.total .value { color: var(--amber-deep); font-size: 28px; }
+
+/* CTA */
+.cta-section { padding: 120px 0; text-align: center; background: var(--cream); }
+.cta-section h2 { font-family: var(--serif); font-size: clamp(36px, 5vw, 64px); font-weight: 600; letter-spacing: -0.025em; margin-bottom: 24px; line-height: 1.05; color: var(--charcoal); }
+.cta-section h2 em { font-style: italic; color: var(--amber-deep); }
+.cta-section p { color: var(--ink-soft); font-size: 17px; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.65; }
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.cta-button { display: inline-flex; align-items: center; gap: 8px; padding: 18px 36px; border-radius: 4px; font-size: 14px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; transition: all 0.25s; }
+.cta-button.primary { background: var(--amber-deep); color: #FFF; }
+.cta-button.primary:hover { background: var(--charcoal); transform: translateY(-2px); }
+.cta-button.ghost { border: 1px solid var(--line); color: var(--charcoal); background: #FFF; }
+.cta-button.ghost:hover { border-color: var(--amber); color: var(--amber-deep); }
+
+footer { padding: 36px 0; border-top: 1px solid var(--line); text-align: center; font-size: 13px; color: var(--ink-quiet); background: var(--cream); }
+footer a { color: var(--amber-deep); }
+
+@media (max-width: 1024px) {
+  .compare-grid, .audience-grid, .bombshell-grid, .plan-grid { grid-template-columns: 1fr; gap: 32px; }
+  .scorecard-header, .scorecard-row { padding: 14px 20px; }
+  .math-card { padding: 28px 24px; }
+  .audience-num { font-size: 32px; min-width: 80px; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span class="topbar-tag">Search Audit Report &middot; Prepared by AG1 Consulting</span>
+    <span>For Aaron Howard &middot; A Howard Productions</span>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Prepared for Aaron Howard &middot; AG1 Consulting</span>
+        <h1>46,000 followers built.<br>The website that converts them <em>was never built</em>.</h1>
+        <p>You are the most recognizable videographer in your market on Instagram. You are also invisible the moment a Sarasota lawyer or doctor opens Google. Here is what we would build in less than 7 days, and what it means for the second half of your year.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Where you are <em>vs</em> where the build sits.</h2>
+    <p class="section-sub">Same audience. Same craft. Same Sarasota market. Two completely different chances of being found by the next $25,000 personal injury attorney searching "Sarasota videographer for law firm" at 9pm on a Tuesday.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <div class="compare-label current">Today &middot; Public Surfaces</div>
+        <div class="compare-preview">
+          <div class="compare-preview-fallback compare-preview-current">
+            <h3>instagram.com/<br>ahowardproductions</h3>
+            <p style="color: rgba(255,255,255,0.7); font-size: 14px;">Your only public surface</p>
+          </div>
+        </div>
+        <div class="compare-body current">
+          <h4>What's there now</h4>
+          <p>A 46K-follower Instagram, a YouTube channel, a TikTok, a Facebook page, a LinkedIn profile, and a Sarasota Chamber of Commerce listing. Zero owned-search infrastructure.</p>
+          <ul>
+            <li>No website. No domain. The only place a Google search for "ahowardproductions" lands is Instagram.</li>
+            <li>No ranking for "Sarasota videographer," "Lakewood Ranch video production," or any commercial-intent variant in your service area</li>
+            <li>No AEO citations. ChatGPT, Perplexity, and Gemini do not surface you when a local business asks for "best videographer in Sarasota for my law firm"</li>
+            <li>Your Instagram bio link points to nothing that converts pipeline. It points back to Instagram.</li>
+            <li>Cross-platform reach is real, but each platform owns the audience. You rent. You do not own.</li>
+            <li>Your retainer math caps at the geographic radius you can drive to, with no funnel feeding cold inbound</li>
+          </ul>
+          <a href="https://www.instagram.com/ahowardproductions/" target="_blank" rel="noopener" class="compare-cta cta-current">View Instagram &rarr;</a>
+        </div>
+      </div>
+
+      <div class="compare-card">
+        <div class="compare-label new">Proposed &middot; Less Than 7-Day Install</div>
+        <div class="compare-preview">
+          <div class="compare-preview-fallback compare-preview-new">
+            <h3>ahowardproductions.com</h3>
+            <p style="color: rgba(255,255,255,0.85); font-size: 14px;">The site that should already exist</p>
+          </div>
+        </div>
+        <div class="compare-body new">
+          <h4>What we'd ship</h4>
+          <p>A cinematic Sarasota-and-Lakewood-Ranch creative studio site, built on the AG1 production stack. The same AEO + SEO scaffold we install for every local-services operator, tuned to your two highest-intent niches: law firms and medical practices.</p>
+          <ul>
+            <li>Full ahowardproductions.com built and deployed in less than 7 days</li>
+            <li>Hero reel, service-deep landing pages (legal video, medical practice video, brand films, social retainer)</li>
+            <li>Full LocalBusiness + VideoObject + Person + Service schema markup</li>
+            <li>Programmatic SEO scaffold for "Sarasota [niche] videographer" and "Lakewood Ranch [niche] video" variants</li>
+            <li>AEO long-form structured for ChatGPT / Perplexity / Gemini citation pickup on local-pro-relevant queries</li>
+            <li>Google Business Profile rebuild plus citation campaign across Florida trade directories</li>
+            <li>Email capture and Calendly funnel that turns the 46K Instagram audience into bookable inbound</li>
+            <li>Performance benchmark: top 10 Google for "Sarasota videographer" by day 60, or work continues at no additional cost</li>
+          </ul>
+          <a href="mailto:info@andreicopy.net" class="compare-cta cta-new">Book the Strategy Call &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bombshell-section">
+  <div class="container">
+    <div class="bombshell-grid">
+      <div>
+        <div class="bombshell-stat">0</div>
+        <div class="bombshell-stat-label">Your share of search clicks for "Sarasota videographer," "Lakewood Ranch videographer," and every commercial variant we audited</div>
+      </div>
+      <div class="bombshell-content">
+        <h2>The most recognizable videographer in your market is <em>invisible</em> the moment Google opens.</h2>
+        <p>A Sarasota personal injury attorney just typed "best videographer for my law firm Sarasota" into Google. The results that came back: <strong>Sarasota Court Reporters. Premier Video Productions in Bradenton. Captivation Agency. Action Video Productions. A handful of Thumbtack listings.</strong></p>
+        <p>You did not appear. Not in the organic results. Not in the local pack. Not in Google's AI Overview. Not in a ChatGPT recommendation. Not in Perplexity. The audience you have built on Instagram does not save you here, because each of those platforms owns the channel and Google does not crawl it as authority signal.</p>
+        <p>That attorney is going to call one of those four companies this week. <strong>$25,000 LTV per case</strong> is walking into someone else's pipeline because your front door does not exist.</p>
+        <p style="font-size: 14px; color: rgba(255,255,255,0.55); font-style: italic;">This is the kind of gap that does not show up in Instagram analytics. You see the IG growth, the views, the saves. You do not see the Sarasota lawyer who searched, did not find you, hired Captivation, and never thought of you again.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2 class="section-title">You have <em>the audience</em>.<br>What you do not have is <em>the front door</em>.</h2>
+    <p class="section-sub">Reach across five platforms, all of which Google treats as third-party. Owned-channel inbound is structurally zero because there is no owned channel.</p>
+
+    <div class="audience-grid">
+      <div class="audience-stack">
+        <div class="audience-card">
+          <div class="audience-num">46K</div>
+          <div class="audience-detail">
+            <div class="platform">Instagram followers</div>
+            <div class="desc">Built organically. Lakewood Ranch and Sarasota local discovery. Real reach.</div>
+          </div>
+        </div>
+        <div class="audience-card">
+          <div class="audience-num">YT</div>
+          <div class="audience-detail">
+            <div class="platform">YouTube channel</div>
+            <div class="desc">@aaronhowardproductions. Commercial-intent video already published.</div>
+          </div>
+        </div>
+        <div class="audience-card">
+          <div class="audience-num">TT</div>
+          <div class="audience-detail">
+            <div class="platform">TikTok</div>
+            <div class="desc">@ahowardproductions. Cross-platform short-form.</div>
+          </div>
+        </div>
+        <div class="audience-card">
+          <div class="audience-num">FB</div>
+          <div class="audience-detail">
+            <div class="platform">Facebook + LinkedIn + Chamber listing</div>
+            <div class="desc">Greater Sarasota Chamber of Commerce member. Local business directory presence.</div>
+          </div>
+        </div>
+        <div class="audience-card highlight">
+          <div class="audience-num">0</div>
+          <div class="audience-detail">
+            <div class="platform">Owned website</div>
+            <div class="desc">No domain. No landing pages. No ranking surface. No funnel.</div>
+          </div>
+        </div>
+      </div>
+      <div class="audience-callout">
+        <h4>Every Instagram bio link in your category points back to Instagram.</h4>
+        <p>That is not a videographer problem. It is a structural one. Instagram is rented. The 46K is not yours in the way a 46K-monthly-traffic website would be yours. The day Instagram suspends, throttles, or de-prioritizes your account, the entire audience is gone in 24 hours.</p>
+        <p><strong>The site we would build owns what Instagram only borrows.</strong> Same content, same cinematography, same brand. But the visitor lands on something Google indexes, AI engines cite, and you control end-to-end.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">The <em>math</em> on one missing inbound channel.</h2>
+    <p class="section-sub">Conservative numbers. Sarasota search volume for the niche. Mid-range LTV per local-pro client. The cost of not having a website that ranks.</p>
+
+    <div class="math-card">
+      <h4>What one missed Sarasota law-firm search costs you over a year</h4>
+      <div class="math-row">
+        <div class="label">Estimated Sarasota / Lakewood Ranch monthly searches for "videographer for [law firm / medical practice / dental / contractor]"</div>
+        <div class="value">~280 / mo</div>
+      </div>
+      <div class="math-row">
+        <div class="label">Position #1 click share on commercial-intent local search</div>
+        <div class="value">27.6%</div>
+      </div>
+      <div class="math-row">
+        <div class="label">Monthly clicks to a top-ranked Sarasota videographer site</div>
+        <div class="value">~77 visits</div>
+      </div>
+      <div class="math-row">
+        <div class="label">Inbound-to-discovery-call conversion (qualified intent)</div>
+        <div class="value">~5%</div>
+      </div>
+      <div class="math-row">
+        <div class="label">Discovery calls per month from organic search alone</div>
+        <div class="value">~3-4 calls</div>
+      </div>
+      <div class="math-row">
+        <div class="label">Close rate on warm inbound to your retainer or project tier</div>
+        <div class="value">~25%</div>
+      </div>
+      <div class="math-row">
+        <div class="label">New retainer or project clients per month from search</div>
+        <div class="value">~1 / mo</div>
+      </div>
+      <div class="math-row total">
+        <div class="label">12-month value at $5K avg retainer or one-time project per win</div>
+        <div class="value">$60K to $120K</div>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 28px; font-size: 14px; color: var(--ink-quiet); font-style: italic;">Conservative model. One ranking keyword, one channel. Compounds with every additional service-niche page.</p>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2 class="section-title">The <em>install</em> plan.</h2>
+    <p class="section-sub">Three phases. The site lands inside week one. The SEO and AEO layer compounds across days 8 to 60. The third phase ties the whole thing into your existing retainer model.</p>
+
+    <div class="plan-grid">
+      <div class="plan-card">
+        <span class="plan-num">Phase 01</span>
+        <h4>Foundation install</h4>
+        <p>Less than 7 days. Domain configured. Cinematic ahowardproductions.com built and deployed. Hero reel, service-deep landing pages, brand voice locked. Schema markup wired. Email capture and Calendly funnel live. Mobile-first, less than 1.5 second load on 4G.</p>
+        <span class="plan-week">Days 1 to 7</span>
+      </div>
+      <div class="plan-card">
+        <span class="plan-num">Phase 02</span>
+        <h4>Search and AEO</h4>
+        <p>Programmatic SEO scaffold for Sarasota and Lakewood Ranch service-niche queries. AEO long-form structured for ChatGPT / Perplexity / Gemini citation pickup. Google Business Profile rebuild, photo upload, post cadence, review-velocity automation. Florida trade citation campaign.</p>
+        <span class="plan-week">Days 8 to 60</span>
+      </div>
+      <div class="plan-card">
+        <span class="plan-num">Phase 03</span>
+        <h4>Funnel into retainer</h4>
+        <p>Integrate the new inbound pipe into your existing $3K to $10K retainer model. Pre-call qualification flow. Discovery call structure. Proposal template tuned to your local-pro audience. Tracking dashboard so the next ranking lift is visible the day it happens.</p>
+        <span class="plan-week">Day 60 onward</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">The <em>scorecard</em>.</h2>
+    <p class="section-sub">Every signal Google's local pack and the AI search engines check, the current public-surface presence vs the proposed less-than-7-day install plus 60-day SEO and AEO layer.</p>
+
+    <div class="scorecard">
+      <div class="scorecard-header">
+        <div>Signal</div>
+        <div>Today</div>
+        <div>After install</div>
+      </div>
+      <div class="scorecard-row"><div class="scorecard-label">Owned website</div><div class="scorecard-cell current">&times; None</div><div class="scorecard-cell new">&check; Live Day 7</div></div>
+      <div class="scorecard-row"><div class="scorecard-label">Service-deep landing pages</div><div class="scorecard-cell current">&times; None</div><div class="scorecard-cell new">&check; 6 to 8 niche pages</div></div>
+      <div class="scorecard-row"><div class="scorecard-label">LocalBusiness + Person + VideoObject schema</div><div class="scorecard-cell current">&times; None</div><div class="scorecard-cell new">&check; Full</div></div>
+      <div class="scorecard-row"><div class="scorecard-label">FAQ schema (AI Overview lift)</div><div class="scorecard-cell current">&times; None</div><div class="scorecard-cell new">&check; 8+ Q and As</div></div>
+      <div class="scorecard-row"><div class="scorecard-label">"Sarasota videographer" Google ranking</div><div class="scorecard-cell current">Not in top 100</div><div class="scorecard-cell new">Top 10 by day 60</div></div>
+      <div class="scorecard-row"><div class="scorecard-label">"Sarasota videographer for law firm" ranking</div><div class="scorecard-cell current">Not in top 100</div><div class="scorecard-cell new">Top 5 target</div></div>
+      <div class="scorecard-row"><div class="scorecard-label">AEO citation: ChatGPT / Perplexity / Gemini</div><div class="scorecard-cell current">&times; Zero pickup</div><div class="scorecard-cell new">&check; Cited on 6+ niche queries</div></div>
+      <div class="scorecard-row"><div class="scorecard-label">Map Pack appearance</div><div class="scorecard-cell current">&times; Inconsistent</div><div class="scorecard-cell new">Top 3 target</div></div>
+      <div class="scorecard-row"><div class="scorecard-label">Florida trade citation list inclusions</div><div class="scorecard-cell current">Partial (Chamber only)</div><div class="scorecard-cell new">12+ verified</div></div>
+      <div class="scorecard-row"><div class="scorecard-label">Email capture / lead funnel</div><div class="scorecard-cell current">&times; None</div><div class="scorecard-cell new">&check; Live with Calendly</div></div>
+      <div class="scorecard-row"><div class="scorecard-label">Owned audience vs rented</div><div class="scorecard-cell current">100% rented</div><div class="scorecard-cell new">Hybrid + compounding</div></div>
+      <div class="scorecard-row"><div class="scorecard-label">Design tier</div><div class="scorecard-cell current">N/A</div><div class="scorecard-cell new">A+</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>The next Sarasota law-firm search should be<br>finding <em>your</em> work, not somebody else's.</h2>
+    <p>Right now, that search ends at Sarasota Court Reporters. In less than 7 days, the answer changes. Less than 60 days from there, you are top 10 on the keywords that pay your retainer math. Let's talk.</p>
+    <div class="cta-buttons">
+      <a href="https://calendly.com/ag-copy/call-with-andrei" class="cta-button primary">Book the Strategy Call &rarr;</a>
+      <a href="https://andrei170.github.io/ag1-services/" class="cta-button ghost">Explore the AG1 Services Stack &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    AG1 Consulting Ltd &middot; Andrei Givero &middot; <a href="mailto:info@andreicopy.net">info@andreicopy.net</a> &middot; <a href="https://andrei170.github.io/ag1/">andrei170.github.io/ag1</a>
+  </div>
+</footer>
+
+</body>
+</html>
