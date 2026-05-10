@@ -70,7 +70,9 @@ a { color: var(--amber-deep); text-decoration: none; transition: color 0.2s; }
 .cta-ghost:hover { border-color: var(--amber); color: var(--amber); }
 
 /* Reel placeholder */
-.hero-reel { position: relative; aspect-ratio: 9/14; max-height: 620px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(216,139,71,0.25); background: var(--charcoal); box-shadow: 0 30px 80px -20px rgba(216,139,71,0.22); }
+.hero-reel { position: relative; aspect-ratio: 16/10; border-radius: 12px; overflow: hidden; border: 1px solid rgba(216,139,71,0.25); background: linear-gradient(135deg, rgba(216,139,71,0.18) 0%, rgba(15,17,21,0.95) 100%), radial-gradient(circle at 30% 30%, rgba(216,139,71,0.18), transparent 60%); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 18px; padding: 32px; box-shadow: 0 30px 80px -20px rgba(216,139,71,0.22); }
+.hero-reel::after { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(0deg, rgba(255,255,255,0.018) 0px, rgba(255,255,255,0.018) 1px, transparent 1px, transparent 3px); pointer-events: none; mix-blend-mode: overlay; }
+.hero-reel > * { position: relative; z-index: 1; }
 .reel-play { width: 78px; height: 78px; border-radius: 50%; background: var(--amber); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 8px rgba(216,139,71,0.18); transition: transform 0.3s; cursor: pointer; }
 .hero-reel:hover .reel-play { transform: scale(1.05); }
 .reel-play::after { content: ''; width: 0; height: 0; border-left: 18px solid var(--charcoal); border-top: 12px solid transparent; border-bottom: 12px solid transparent; margin-left: 5px; }
@@ -252,7 +254,10 @@ footer a:hover { color: var(--amber); }
         </div>
       </div>
       <div class="hero-reel">
-        <iframe src="https://www.instagram.com/ahowardproductions/embed/" frameborder="0" scrolling="no" allowtransparency="true" style="width:100%;height:100%;border-radius:12px;background:transparent;" loading="lazy"></iframe>
+        <div class="reel-play"></div>
+        <div class="reel-label">2026 Sizzle Reel</div>
+        <div class="reel-tag">Sarasota's local operators, on screen</div>
+        <div style="position:absolute;bottom:20px;left:0;right:0;text-align:center;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-family:var(--sans);">Demo placeholder &middot; Live reel embedded on build</div>
       </div>
     </div>
   </div>
